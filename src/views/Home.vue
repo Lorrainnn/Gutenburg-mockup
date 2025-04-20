@@ -3,8 +3,6 @@
       <AppHeader />
       <InfoBanner />
   
-      <!-- BookList 区 -->
-      <!-- Home.vue 中的 BookList 区 -->
         <div class="book-list">
           <BookCard
             v-for="book in books"

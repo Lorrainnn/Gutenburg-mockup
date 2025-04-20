@@ -1,12 +1,12 @@
-
-
+<!-- App header -->
 <template>
   <header class="app-header">
     
+    <!-- Block 1 -->
     <div class="header-inner">
       <div class="logo-title">
-    
         <img src="../assets/gutenburg.png" alt="Gutenberg Logo" class="header-logo" />
+        
         <router-link to="/" class="title-desc">
           <h1>Gutenberg Library</h1>
           <h2>The first producer of free ebooks</h2>
@@ -23,6 +23,7 @@
       </select>
     </div>
 
+    <!-- Block 2 -->
     <div class="search-bar">
       <input
         type="text"

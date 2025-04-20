@@ -1,4 +1,26 @@
-/* ——— 第一部分：Header 区 ——— */
+/* This is for home page */
+
+
+/* focus for all */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: none !important;
+  border-color: #999 !important;
+  box-shadow: 0 0 0 2px #AA873B !important;
+}
+
+button,
+.page-btn,
+.search-btn {
+  cursor: pointer;
+}
+
+/* ——— TODO: Filter hover/select effect: :now is default grey ——— */
+
+/* ——— Section 1: Header ——— */
 .app-header {
   box-sizing: border-box;
   background-color: #7EBED0;
@@ -8,26 +30,27 @@
   padding: 1em 0;
 }
 
+/* Include logo-title and lang-select */
+.app-header .header-inner {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  position: relative;
+  padding: 0 1em;              
+  margin: 0 auto;
+}
 
-  .app-header .header-inner {
-    display: flex;
-    justify-content: space-between; /* 两块：logo-title 与 lang-select */
-    align-items: center;
-    position: relative;
-    padding: 0 1em;               /* 上下左右都留出空间 */
-    margin: 0 auto;
-  }
-  .logo-title {
-    display: flex;
-    align-items: center;
-  }
+.logo-title {
+  display: flex;
+  align-items: center;
+}
 
-  .header-logo {
-    flex: none;
-    height: auto;
-    margin-right: 0.75em; /* 与标题保持合适间距 */
-    vertical-align: middle;
-  }
+.header-logo {
+  flex: none;
+  height: auto;
+  margin-right: 0.75em; 
+  vertical-align: middle;
+}
 
 .title-desc {
     text-decoration: none;
@@ -47,13 +70,16 @@
     color: rgba(255,255,255,0.9);
 }
 
+/* Language change */
 .app-header .lang-select {
     position: absolute;
     border: 1px solid #ccc;
-    top: 1em;    /* 与 .header-inner 的上内边距保持一致 */
-    right: 1em;  /* 与 .header-inner 的左右内边距保持一致 */
+    top: 1em;   
+    right: 1em; 
   }
 
+
+/* Search bar */
 .app-header .search-bar {
   display: flex;
   width: 60%;
@@ -89,83 +115,68 @@
     font-family: inherit;
   }
 
-/* focus for all */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus,
-a:focus {
-  outline: none !important;
-  border-color: #999 !important;
-  box-shadow: 0 0 0 2px #AA873B !important;
-}
 
-button,
-.page-btn,
-.search-btn {
-  cursor: pointer;
-}
-
-/* ——— 第二部分：Info-banner 区 ——— */
+/* ——— Section 2: Info-banner ——— */
 .info-banner {
     text-align: center;
     padding: 2em 0;
-  }
+}
   
-  /* 原有 .precontent 样式，摘自 style.css */
-  .precontent {
-    margin: 0 1em;
-    text-align: center;
-  }
-  .precontent p {
-    font-family: "RobotoThin";
-    font-size: 1.2em;
-  }
-  .precontent strong {
-    font-family: "RobotoBold";
-    font-size: 1.5em;
-    color: #AA873B;
-  } 
+/* Same as existing gutenburg design */
+.precontent {
+  margin: 0 1em;
+  text-align: center;
+}
+.precontent p {
+  font-family: "RobotoThin";
+  font-size: 1.2em;
+}
+.precontent strong {
+  font-family: "RobotoBold";
+  font-size: 1.5em;
+  color: #AA873B;
+} 
   
 
-/* 分页 + 排序 控件外层 */
+/* Pagination and sort section */
 .banner-controls {
     padding: 0 1em;
     margin-top: 1.5em;
-  }
+}
   
-  /* 新布局：一行内，分页居中、排序靠右 */
-  .controls-inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr; /* 左边占满，右边自适应 */
-    align-items: center;
-    width: 70%;
-    justify-self: center;
-  }
+/* middle pagination + right align sort */
+/* This is not working well in small size.. TODO */
+.controls-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  width: 70%;
+  justify-self: center;
+}
+
+
+.pagination {
+  grid-column: 2; 
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+
+.page-btn {
+  padding: 0.5em 1em;
+  border: none;                
+  background: none;            
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 90px;             
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+}
   
-  /* 分页容器：居中 */
-  .pagination {
-    grid-column: 2; /* 放在中间这列 */
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-  }
-  
-  /* 分页按钮 */
-  .page-btn {
-    padding: 0.5em 1em;
-    border: none;                 /* ❌ 去掉边框 */
-    background: none;             /* ❌ 去掉背景 */
-    font-family: inherit;
-    cursor: pointer;
-    min-width: 90px;              /* ✅ 统一宽度 */
-    text-align: center;
-    font-weight: bold;
-    font-size: 1em;
-  }
-  
-  .page-btn,
+.page-btn,
 .page-number {
   padding: 0.5em 1em;
   border: none;
@@ -178,39 +189,40 @@ button,
   font-size: 1em;
 }
 
-/* 当前页高亮（可选） */
+/* Current Page -> TODO: demo */
 .page-number.active {
-  background-color: #007BFF;
+  background-color: #7EBED0;
   color: white;
   border-radius: 4px;
 }
   
-  /* 排序下拉框：靠右 */
-  .sort-select {
-    grid-column: 3; /* 放在右侧列 */
-    justify-self: end;
-    padding: 0.5em 0em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
-    cursor: pointer;
-  }
+
+.sort-select {
+  grid-column: 3; 
+  justify-self: end;
+  padding: 0.5em 0em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+}
   
 
-  /* ——— 第三部分：Bookshelf ——— */
 
-/* 📚 Book List 容器 */
+/* ——— Section 3: Bookshelf ——— */
+
+/* Container for all bookcards */
 .book-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5em;
   padding: 1.5em;
-  align-items: stretch; /* 💡 保证每个卡片在 Grid 中等高 */
+  align-items: stretch; 
   width:70%;
   justify-self: center;
 }
 
-/* 📦 Book Card 统一尺寸 */
+
 .book-card {
   display: flex;
   flex-direction: row;
@@ -220,7 +232,7 @@ button,
   border-radius: 6px;
   background: #fff;
   padding: 1em;
-  height: 200px;         /* 💡 所有卡片高度一致 */
+  height: 200px;        
   box-sizing: border-box;
 }
 
@@ -232,11 +244,11 @@ button,
 .book-stripe {
   width: 6px;
   height: 100%;
-  background-color: #7EBED0; /* Bootstrap 蓝 */
+  background-color: #7EBED0; 
   border-radius: 2px;
 }
 
-/* 🖼️ Book Cover 固定尺寸 */
+
 .book-cover {
   width: 96px;
   height: 140px;
@@ -244,7 +256,7 @@ button,
   border-radius: 4px;
 }
 
-/* 📖 文字区 */
+/* Book info container */
 .book-text {
   flex: 1;
   display: flex;
@@ -266,7 +278,7 @@ button,
 
 .book-rating {
   font-size: 1em;
-  color: #f5a623;
+  color: #AA873B;
 }
 
 .book-rating .empty {

@@ -1,6 +1,7 @@
+<!-- Information Section -->
 <template>
   <section class="info-banner">
-    <!-- 文字介绍 -->
+    <!-- Block 1 -->
     <div class="precontent">
       <p><strong>Project Gutenberg offers over 60,000 free ebooks</strong></p>
       <p>
@@ -16,18 +17,18 @@
       </p>
     </div>
 
+    <!-- Block 2 -->
     <div class="banner-controls">
       <div class="controls-inner">
-        <!-- 分页中间 -->
         <div class="pagination">
           <button class="page-btn">Previous</button>
-          <button class="page-number">1</button>
+          <button class="page-number active">1</button>
           <button class="page-number">2</button>
           <button class="page-number">3</button>
           <button class="page-btn">Next</button>
         </div>
 
-        <!-- 排序靠右 -->
+    
         <select class="sort-select">
           <option>By popularity</option>
           <option>By title</option>
