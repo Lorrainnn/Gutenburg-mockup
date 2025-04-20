@@ -4,16 +4,15 @@
       <InfoBanner />
   
       <!-- BookList 区 -->
-      <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <BookCard
-          v-for="book in books"
-          :key="book.id"
-          :title="book.title"
-          :author="book.author"
-          :cover="book.cover"
-          :rating="book.rating"
-        />
-      </div>
+      <!-- Home.vue 中的 BookList 区 -->
+        <div class="book-list">
+          <BookCard
+            v-for="book in books"
+            :key="book.id"
+            v-bind="book"
+          />
+        </div>
+
     </div>
   </template>
   
@@ -24,9 +23,49 @@
   
   // Mock 数据
   const books = [
-    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', cover: '/assets/covers/g1.jpg', rating: 4 },
-    { id: 2, title: 'Alice’s Adventures', author: 'Lewis Carroll', cover: '/assets/covers/a1.jpg', rating: 5 },
-    // …更多示例
-  ]
+  {
+    id: 1,
+    title: 'Alice\'s Adventures in Wonderland',
+    author: 'Lewis Carroll',
+    cover: new URL('../assets/covers/11.jpg', import.meta.url).href,
+    rating: 4
+  },
+  {
+    id: 2,
+    title: 'The Strange Case of Dr. Jekyll and Mr. Hyde',
+    author: 'Robert Louis Stevenson',
+    cover: new URL('../assets/covers/43.jpg', import.meta.url).href,
+    rating: 5
+  },
+  {
+    id: 3,
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    cover: new URL('../assets/covers/1342.jpg', import.meta.url).href,
+    rating: 5
+  },
+  {
+    id: 4,
+    title: 'Ulysses',
+    author: 'James Joyce',
+    cover: new URL('../assets/covers/4300.jpg', import.meta.url).href,
+    rating: 5
+  },
+  {
+    id: 5,
+    title: 'Little Women',
+    author: 'Louisa May Alcott',
+    cover: new URL('../assets/covers/37106.jpg', import.meta.url).href,
+    rating: 5
+  },
+  {
+    id: 6,
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    cover: new URL('../assets/covers/64317.jpg', import.meta.url).href,
+    rating: 5
+  }
+]
+
   </script>
   
