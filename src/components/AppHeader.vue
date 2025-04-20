@@ -1,11 +1,18 @@
+
+
 <template>
   <header class="app-header">
     
     <div class="header-inner">
-      <router-link to="/" class="title-desc">
-        <h1>Project Gutenberg Library</h1>
-        <h2>The first producer of free ebooks</h2>
-      </router-link>
+      <div class="logo-title">
+    
+        <img src="../assets/gutenburg.png" alt="Gutenberg Logo" class="header-logo" />
+        <router-link to="/" class="title-desc">
+          <h1>Gutenberg Library</h1>
+          <h2>The first producer of free ebooks</h2>
+        </router-link>
+        
+      </div>
 
       <select class="lang-select">
         <option>English</option>

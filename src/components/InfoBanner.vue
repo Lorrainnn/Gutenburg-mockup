@@ -24,8 +24,6 @@
           <button class="page-number">1</button>
           <button class="page-number">2</button>
           <button class="page-number">3</button>
-          <button class="page-number">4</button>
-          <button class="page-number">5</button>
           <button class="page-btn">Next</button>
         </div>
 

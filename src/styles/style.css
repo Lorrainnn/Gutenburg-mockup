@@ -8,13 +8,25 @@
   padding: 1em 0;
 }
 
-.app-header .header-inner {
+
+  .app-header .header-inner {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;    /* 从顶部对齐，而不是居中 */
+    justify-content: space-between; /* 两块：logo-title 与 lang-select */
+    align-items: center;
     position: relative;
     padding: 0 1em;               /* 上下左右都留出空间 */
     margin: 0 auto;
+  }
+  .logo-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo {
+    flex: none;
+    height: auto;
+    margin-right: 0.75em; /* 与标题保持合适间距 */
+    vertical-align: middle;
   }
 
 .title-desc {
@@ -44,7 +56,7 @@
 
 .app-header .search-bar {
   display: flex;
-  width: 50%;
+  width: 60%;
   max-width: 60%;
   justify-content: center;
   align-items: center;
