@@ -22,6 +22,7 @@ Resizeble
 
 
 **How excecute:**<br>
+I use WSL for development.<br>
 ```npm run dev```
 
 
