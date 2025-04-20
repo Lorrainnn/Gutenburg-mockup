@@ -21,6 +21,15 @@ Resizeble
  color-select contrast test [Issue-216](https://github.com/openzim/gutenberg/issues/216)
 
 
+**How excecute:**<br>
+```npm run dev```
+
+
+**Page Screenshot:**<br>
+![alt text](/scratch_ideas/main_page_small.png)
+![alt text](/scratch_ideas/main_page_large.png)
+![alt text](/scratch_ideas/book_page_small.png)
+![alt text](/scratch_ideas/book_page_large.png)
 
 <br>**My ideas**<br>
 (Im like spending more time in design type...)
@@ -29,12 +38,4 @@ Resizeble
 
 In general, just feel free to play around!!!
 
-**How excecute:**<br>
-```npm run dev```
-
-**Page Screenshot:**<br>
-![alt text](/scratch_ideas/main_page_small.png)
-![alt text](/scratch_ideas/main_page_large.png)
-![alt text](/scratch_ideas/book_page_small.png)
-![alt text](/scratch_ideas/book_page_large.png)
 /src/assets/books.json ----> This is the dataset I used for testing
