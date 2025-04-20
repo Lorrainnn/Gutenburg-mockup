@@ -1,0 +1,112 @@
+/* 整体容器（可自行保留或改） */
+.book-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+
+/* 主体：封面 + 右侧内容 */
+.book-container {
+  display: flex;
+  gap: 2em;
+  max-width: 960px;
+  margin: 2em auto;
+  padding: 1em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* 左侧封面：占 40% */
+.book-cover {
+  flex: 0 0 35%;      /* 不缩放、不生长，固定占 40% */
+  width: 35%;         /* 兼容性更好 */
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* 右侧详情：三行 + 描述 */
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* 第一行：标题 */
+.book-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.book-author {
+  margin: 0 0 0.5em;
+  font-size: 1em;
+  color: #333;
+}
+
+.book-meta {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1em;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.book-meta .sep {
+  margin: 0 0.5em;
+  color: #999;
+}
+
+/* 现有 .book-footer 规则保持不变... */
+
+
+/* 第三行：评分 + 按钮 同行 */
+.book-footer {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+/* 评分拉到最左 */
+.book-rating {
+  font-size: 1.2em;
+  color: #f5a623;
+}
+
+/* 空星 */
+.book-rating .empty {
+  color: #ccc;
+}
+
+/* 按钮拉到最右 */
+.book-buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5em;
+}
+
+/* 下载按钮基础样式 */
+.book-buttons button {
+  padding: 0.5em 1em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+/* 修改描述区域为可滚动 */
+.book-description {
+  margin-top: 1em;
+  padding-right: 0.5em;    /* 给滚动条留出空间 */
+  max-height: 200px;       /* 或你希望的最大高度 */
+  overflow-y: auto;        /* 超出显示滚动条 */
+  line-height: 1.6;
+  color: #333;
+}
+
