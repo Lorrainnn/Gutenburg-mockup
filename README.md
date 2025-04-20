@@ -6,7 +6,7 @@ book description: Helpful and worth to include: add parse logic to rdf file woul
 
 Favoites feature. Enable user to have a personalized favourate booklist.
 
-(implemented in demo)
+
 **What I implement:**<br>
 Most front-end UI: 
 language shift/language filter/pagination button/sort button
@@ -22,7 +22,7 @@ Resizeble
 
 
 **How excecute:**<br>
-I use WSL for development.<br>
+I use WSL for development and based on vue/vite.<br>
 ```
 #1
 #Git clone, Open folder in WSL
