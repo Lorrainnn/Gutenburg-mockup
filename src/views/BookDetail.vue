@@ -1,29 +1,65 @@
 <template>
-    <div class="min-h-screen bg-gray-50">
-      <AppHeader />
+  <div class="book-detail">
+    <AppHeader />
+
+    <div class="book-container">
+      <!-- 左侧封面 -->
+      <img :src="book.cover" alt="cover" class="book-cover" />
+
+      <!-- 右侧内容，三行布局 -->
+      <div class="details">
+        <!-- 第一行：标题 -->
+        <h1 class="book-title">{{ book.title }}</h1>
+
   
-      <div class="p-4 max-w-3xl mx-auto">
-        <img :src="cover" alt="cover" class="w-full h-auto rounded" />
-        <h1 class="mt-4 text-2xl font-bold">{{ title }}</h1>
-        <p class="text-gray-600">{{ author }}</p>
-  
-        <div class="mt-4 space-x-2">
-          <button class="px-4 py-2 border rounded">Download HTML</button>
-          <button class="px-4 py-2 border rounded">Download EPUB</button>
+        <p class="book-author">{{ book.author }}</p>
+
+        <!-- 语言 & License：第二行 -->
+        <p class="book-meta">
+          <span class="book-language">{{ book.language }}</span>
+          <span class="sep">•</span>
+          <span class="book-license">{{ book.license }}</span>
+        </p>
+
+
+        <!-- 第三行：rating + 按钮 同行 -->
+        <div class="book-footer">
+          <div class="book-rating">
+            <span v-for="n in book.rating" :key="`f-${n}`">★</span>
+            <span v-for="n in (5 - book.rating)" :key="`e-${n}`" class="empty">★</span>
+          </div>
+          <div class="book-buttons">
+            <button>Download HTML</button>
+            <button>Download EPUB</button>
+          </div>
         </div>
-  
-        <p class="mt-6 text-gray-700">{{ description }}</p>
+
+        <!-- 下面是描述 -->
+        <p class="book-description">{{ book.description }}</p>
       </div>
     </div>
-  </template>
-  
-  <script setup>
-  import AppHeader from '@/components/AppHeader.vue'
-  
-  // Mock 数据（实际可通过 props 或 API 获取）
-  const cover = '/assets/covers/g1.jpg'
-  const title = 'The Great Gatsby'
-  const author = 'F. Scott Fitzgerald'
-  const description = 'A portrait of the Jazz Age in all of its decadence and excess...'
-  </script>
+  </div>
+</template>
+
+
+
+<script setup>
+import { useRoute } from 'vue-router'
+import books from '@/assets/books.json'
+import AppHeader from '@/components/AppHeader.vue'
+
+const route = useRoute()
+const bookId = parseInt(route.params.id)
+const book = books.find(b => b.id === bookId) || {
+  title: 'Not found',
+  author: '',
+  cover: '',
+  rating: ' ',
+  description: ''
+}
+</script>
+
+<style scoped src="@/styles/detail.css" />
+
+
   

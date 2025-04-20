@@ -2,10 +2,10 @@
   <header class="app-header">
     
     <div class="header-inner">
-      <div class="title-desc">
+      <router-link to="/" class="title-desc">
         <h1>Project Gutenberg Library</h1>
         <h2>The first producer of free ebooks</h2>
-      </div>
+      </router-link>
 
       <select class="lang-select">
         <option>English</option>
