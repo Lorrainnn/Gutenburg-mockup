@@ -24,7 +24,13 @@ Resizeble
 **How excecute:**<br>
 I use WSL for development.<br>
 ```
+#1
+#Git clone, Open folder in WSL
+
+#2
 npm install
+
+#3
 npm run dev
 ```
 
